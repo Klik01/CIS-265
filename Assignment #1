@@ -1,0 +1,66 @@
+/*
+ * Name: Kevin Klik
+ * CSU ID: 2570135
+ * CIS 265: Assignment #1
+ * Description: Create 2 dimensional array to store table, then prompt user to input a student ID
+                until 0 is given. The program will compare the number with IDs in the table, and 
+                when match is found, program will print a statement. 
+ */
+ 
+
+
+import java.util.Scanner;
+   class Student
+   {
+       public int studentID;
+       public int score;
+       Student(int studentID, int score) {
+              this.studentID = studentID;
+              this.score = score;
+          }
+   }
+
+
+      public class Klik {
+   public static void main (String[] args) {
+       //creating array
+       
+       Student[] array;
+       int id;
+        
+       Scanner sc = new Scanner(System.in);
+       array= new Student[9];
+
+       // initialize the elements of the array
+       array[0] = new Student(2001,50);
+       array[1] = new Student(2002,60);
+       array[2] = new Student(2003,70);
+       array[3] = new Student(2004,80);
+       array[4] = new Student(2005,90);
+       array[5] = new Student(2006,40);
+       array[6] = new Student(2007,30);
+       array[7] = new Student(2008,20);
+       array[8] = new Student(2009,10);
+  
+      
+      
+       do {
+         boolean found = false;
+         System.out.print("Enter a student ID (enter 0 to quit): ");
+            id = sc.nextInt();
+       
+       for (int i = 0; i < array.length; i++) {
+         if (id == array[i].studentID) {
+         found = true;
+            System.out.println("Student " + id + " scored " + array[i].score);
+         }
+       }
+         if (!found && id != 0) {
+            System.out.println("Student " + id + " not found.");
+       }
+            } 
+            
+       while(id != 0);
+         System.out.println("Goodbye");
+   }
+}
